@@ -4,28 +4,16 @@
 
 $wrapper-class: "wrapper";
 $row-class: "content";
-$column-class: "span";
+$column-class: "col-span";
 
 $row-width: 980px;
 $gutter: 20px;
 
-$num-columns: 12;
+$num-columns: 8;
 
 $big-break: 1280px;
 $medium-break: 800px;
 $small-break: 480px;
-
-@mixin breakpoint($point) {
-  @if $point == big {
-    @media (screen and max-width: $big-break) { @content; }
-  }
-  @else if $point == medium {
-    @media (screen and max-width: $medium-break) { @content; }
-  }
-  @else if $point == small {
-    @media (screen and max-width: $small-break)  { @content; }
-  }
-}
 
 *, *:after, *:before {
   @include box-sizing(border-box);
@@ -54,33 +42,31 @@ $small-break: 480px;
   padding-right: $gutter;
 }
 
-@for $i from 1 through $num-columns {
-  .#{$column-class}-#{$i} {
-    width: $i / $num-columns * 100%;
+.#{$column-class}-1-1 {
+  width: 100%;
+}
+
+@for $i from 2 through $num-columns {
+  @for $j from 1 through $i - 1 {
+    .#{$column-class}-#{$j}-#{$i} {
+      width: ($j / $i) * 100%;
+    }
   }
 }
 
-@include breakpoint(big) {
+@media (screen and max-width: $big-break) {
   .#{$row-class} {
     width: 100%;
   }
 }
 
-@include breakpoint(medium) {
+@media (screen and max-width: $medium-break) {
   [class*='#{$column-class}-'] {
     padding-bottom: $gutter;
   }
-
-  .#{$column-class}-2 {
-    width: (1 / 3) * 100%;
-  }
-
-  .#{$column-class}-3 {
-    width: (1 / 2) * 100%;
-  }
 }
 
-@include breakpoint(small) {
+@media (screen and max-width: $small-break) {
   [class*='#{$column-class}-'] {
     width: 100%;
   }
