@@ -11,8 +11,8 @@ Or run [SASS + COMPASS](http://thesassway.com/beginner/getting-started-with-sass
 sass/screen.scss
 
 $wrapper-class: "wrapper"; // full width wrapper
-$row-class: "content";     // content within a wrapper (or not). like a row
-$column-class: "col-span"; // column class prefix
+$row-class: "row";         // content within a wrapper (or not). like a row
+$column-class: "col";      // column class prefix
 
 $row-width: 980px;         // max content width
 $gutter: 20px;             // gutter between columns
