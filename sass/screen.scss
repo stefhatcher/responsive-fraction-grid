@@ -11,9 +11,10 @@ $gutter: 20px;             // gutter between columns
 
 $num-columns: 8;           // number of max columns 
 
-$big-break: $row-width + $gutter;        // responsive breaking points
-$medium-break: 800px;      // most tablets in portrait, iphone5 landscape
-$small-break: 568px;       // most mobiles in portrait, iphone3-4S in landscape
+// responsive breaking points
+$big-break: $row-width + $gutter; // most tablets in landscape
+$medium-break: 800px;             // most tablets in portrait
+$small-break: 568px;              // most mobiles in portrait, iphone3-5 in landscape
 
 *, *:after, *:before {
   @include box-sizing(border-box);
