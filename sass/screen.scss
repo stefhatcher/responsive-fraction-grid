@@ -11,7 +11,7 @@ $gutter: 20px;             // gutter between columns
 
 $num-columns: 8;           // number of max columns 
 
-$big-break: 1280px;        // responsive breaking points
+$big-break: $row-width + $gutter;        // responsive breaking points
 $medium-break: 800px;      // most tablets in portrait, iphone5 landscape
 $small-break: 568px;       // most mobiles in portrait, iphone3-4S in landscape
 
@@ -26,8 +26,9 @@ $small-break: 568px;       // most mobiles in portrait, iphone3-4S in landscape
 .#{$row-class} {
   clear: both;
   margin: 0 auto;
-  max-width: $row-width + $gutter * 2;
+  max-width: $row-width;
   width: $row-width;
+  @include transition(width 190ms ease-out);
 
   &:after {
     content: '';
@@ -52,7 +53,7 @@ $small-break: 568px;       // most mobiles in portrait, iphone3-4S in landscape
   }
 }
 
-@media (screen and max-width: $big-break) {
+@media (max-width: $big-break) {
   .#{$row-class} {
     padding: 0 $gutter;
     width: 100%;
