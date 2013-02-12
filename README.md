@@ -1,9 +1,9 @@
 responsive-fraction-grid
 ===========================
 
-Use the minified, default [stylesheets/screen.css](https://raw.github.com/stefhatcher/simple-responsive-grid-scss/master/stylesheets/screen.css) or run [SASS + COMPASS](http://thesassway.com/beginner/getting-started-with-sass-and-compass) and configure the variable options in:
+Use the minified, default [stylesheets/fraction-grid.css](https://raw.github.com/stefhatcher/responsive-fraction-grid/master/stylesheets/fraction-grid.css) or run [SASS + COMPASS](http://thesassway.com/beginner/getting-started-with-sass-and-compass) and configure the variable options in:
 ```shell
-// sass/screen.scss
+// sass/fraction-grid.scss
 
 $wrapper-class: "wrapper"; // full width wrapper
 $row-class: "row";         // content within a wrapper (or not). like a row
@@ -27,6 +27,10 @@ $small-break: 568px;              // most mobiles in portrait, iphone3-5 in land
 <!-- default row class is "row" -->
 <!-- default column class is "col-#-#" -> col-1-2 -> 1 / 2, or 50% -->
 <!-- default max number of columns is 8 -->
+
+<div class="row">
+  <div class="col-full"> 1/1 = 100% </div>
+</div> <!-- 100% ! -->
 
 <div class="row">
   <div class="col-1-2"> 1/2 = 50% </div>
