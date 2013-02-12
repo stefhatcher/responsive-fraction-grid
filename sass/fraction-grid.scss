@@ -1,19 +1,18 @@
 @import "compass";
-@import "compass/reset";
 @import "compass/css3";
 
 $wrapper-class: "wrapper"; // full width wrapper
 $row-class: "row";         // content within a wrapper (or not). like a row
 $column-class: "col";      // column class prefix
 
-$row-width: 980px;         // max content width
-$gutter: 20px;             // gutter between columns
+$row-width: 980px;
+$gutter: 20px;
 
-$num-columns: 8;           // number of max columns 
+$num-columns: 8;
 
-$big-break: $row-width + $gutter;        // responsive breaking points
-$medium-break: 800px;      // most tablets in portrait, iphone5 landscape
-$small-break: 568px;       // most mobiles in portrait, iphone3-4S in landscape
+$big-break: $row-width + $gutter;
+$medium-break: 768px;
+$small-break: 568px;
 
 *, *:after, *:before {
   @include box-sizing(border-box);
@@ -26,8 +25,9 @@ $small-break: 568px;       // most mobiles in portrait, iphone3-4S in landscape
 .#{$row-class} {
   clear: both;
   margin: 0 auto;
-  max-width: $row-width;
-  width: $row-width;
+  max-width: $row-width + $gutter;
+  position: relative;
+  width: $row-width + $gutter;
   @include transition(width 190ms ease-out);
 
   &:after {
@@ -39,9 +39,14 @@ $small-break: 568px;       // most mobiles in portrait, iphone3-4S in landscape
 
 [class*='#{$column-class}-'] {
   @include float-left;
+  padding: 0 $gutter/2;
 }
 
-.#{$column-class}-1-1 {
+[class*='#{$column-class}-'] + [class*='#{$column-class}-']:last-child {
+  @include float-right;
+}
+
+.#{$column-class}-full {
   width: 100%;
 }
 
@@ -55,15 +60,16 @@ $small-break: 568px;       // most mobiles in portrait, iphone3-4S in landscape
 
 @media (max-width: $big-break) {
   .#{$row-class} {
-    padding: 0 $gutter;
+    padding: 0 $gutter/2;
     width: 100%;
   }
 }
 
-@media (screen and max-width: $medium-break) { }
+// @media (max-width: $medium-break) {
 
+// }
 
-@media (screen and max-width: $small-break) {
+@media (screen and max-width: $medium-break) {
   [class*='#{$column-class}-'] {
     width: 100%;
   }
