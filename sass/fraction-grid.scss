@@ -14,6 +14,7 @@ $big-break: $row-width + $gutter;
 $medium-break: 768px;
 $small-break: 568px;
 
+
 *, *:after, *:before {
   @include box-sizing(border-box);
 }
@@ -39,6 +40,8 @@ $small-break: 568px;
 
 [class*='#{$column-class}-'] {
   @include float-left;
+  min-height: 1px;
+  position: relative;
   padding: 0 $gutter/2;
 }
 
@@ -66,7 +69,7 @@ $small-break: 568px;
 }
 
 // @media (max-width: $medium-break) {
-
+//
 // }
 
 @media (screen and max-width: $medium-break) {
