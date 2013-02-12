@@ -31,207 +31,85 @@
                                              COLLAPSES TO ONE COLUMN FOR MOBILE.
                                              CONFIGURABLE THROUGH SCSS.
                                              MOBILE, TABLETS, IE8+ &AMP; MODERN BROWSERS.">
-
-    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-      }
-
-      .row [class*='col-'] {
-        height:100px }
-
-      .row {
-        margin-bottom:20px }
-
-      .header {
-        background:#dcdcdc;
-        font-family:helvetica, sans-serif;
-        font-size:80%;
-        line-height:40px;
-        height:40px;
-        margin-bottom:20px;
-        text-align:center; }
-
-      .header a, .header a:visited {
-        color: rgb(92, 92, 92);
-        text-decoration: none }
-
-      .panel {
-        background-color: #ccc;
-        background-position:center center;
-        background-repeat:no-repeat;
-        background-size:auto 100%;
-        height:100%;
-        padding:20px;
-        width:100% }
-
-      @media screen and (max-width:800px) {
-        hr {
-          display:none }
-      }
-    </style>
+    <link href="stylesheets/fraction-grid.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/demo.css" media="screen, projection" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="header col-full">
-      <a href="https://github.com/stefhatcher/simple-responsive-grid-scss" target="_blank">
+    <div class="header col-1-1">
+      <a href="https://github.com/stefhatcher/responsive-fraction-grid" target="_blank">
         github: simple fraction grid
       </a>
     </div>
 
     <div class="row">
-      <div class="col-full">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/1')"></div>
-      </div>
+      <div class="col-1-1"><div class="panel"></div></div>
     </div>
 
     <div class="row">
-      <div class="col-1-4">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/4')"></div>
-      </div>
-      <div class="col-1-2">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/2')"></div>
-      </div>
-      <div class="col-1-4">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/4')"></div>
-      </div>
+      <div class="col-1-4"><div class="panel"></div></div>
+      <div class="col-1-2"><div class="panel"></div></div>
+      <div class="col-1-4"><div class="panel"></div></div>
     </div>
 
     <div class="row">
-      <div class="col-2-3">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=2/3')"></div>
-      </div>
-      <div class="col-1-3">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/3')"></div>
-      </div>
+      <div class="col-2-3"><div class="panel"></div></div>
+      <div class="col-1-3"><div class="panel"></div></div>
     </div>
 
     <div class="row">
-      <div class="col-1-2">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/2')"></div>
-      </div>
-      <div class="col-1-2">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/2')"></div>
-      </div>
+      <div class="col-1-2"><div class="panel"></div></div>
+      <div class="col-1-2"><div class="panel"></div></div>
     </div>
 
     <div class="row">
-      <div class="col-1-3">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/3')"></div>
-      </div>
-      <div class="col-1-3">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/3')"></div>
-      </div>
-      <div class="col-1-3">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/3')"></div>
-      </div>
+      <div class="col-1-3"><div class="panel"></div></div>
+      <div class="col-1-3"><div class="panel"></div></div>
+      <div class="col-1-3"><div class="panel"></div></div>
     </div>
 
     <div class="row">
-      <div class="col-1-8">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/8')"></div>
-      </div>
-      <div class="col-1-8">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/8')"></div>
-      </div>
-      <div class="col-1-8">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/8')"></div>
-      </div>
-      <div class="col-1-8">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/8')"></div>
-      </div>
-      <div class="col-1-8">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/8')"></div>
-      </div>
-      <div class="col-1-8">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/8')"></div>
-      </div>
-      <div class="col-1-8">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/8')"></div>
-      </div>
-      <div class="col-1-8">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/8')"></div>
-      </div>
+      <div class="col-1-8"><div class="panel"></div></div>
+      <div class="col-1-8"><div class="panel"></div></div>
+      <div class="col-1-8"><div class="panel"></div></div>
+      <div class="col-1-8"><div class="panel"></div></div>
+      <div class="col-1-8"><div class="panel"></div></div>
+      <div class="col-1-8"><div class="panel"></div></div>
+      <div class="col-1-8"><div class="panel"></div></div>
+      <div class="col-1-8"><div class="panel"></div></div>
     </div>
 
     <div class="row">
-      <div class="col-1-7">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/7')"></div>
-      </div>
-      <div class="col-1-7">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/7')"></div>
-      </div>
-      <div class="col-1-7">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/7')"></div>
-      </div>
-      <div class="col-1-7">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/7')"></div>
-      </div>
-      <div class="col-1-7">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/7')"></div>
-      </div>
-      <div class="col-1-7">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/7')"></div>
-      </div>
-      <div class="col-1-7">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/7')"></div>
-      </div>
+      <div class="col-1-7"><div class="panel"></div></div>
+      <div class="col-1-7"><div class="panel"></div></div>
+      <div class="col-1-7"><div class="panel"></div></div>
+      <div class="col-1-7"><div class="panel"></div></div>
+      <div class="col-1-7"><div class="panel"></div></div>
+      <div class="col-1-7"><div class="panel"></div></div>
+      <div class="col-1-7"><div class="panel"></div></div>
     </div>
 
     <div class="row">
-      <div class="col-1-6">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/6')"></div>
-      </div>
-      <div class="col-1-6">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/6')"></div>
-      </div>
-      <div class="col-1-6">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/6')"></div>
-      </div>
-      <div class="col-1-6">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/6')"></div>
-      </div>
-      <div class="col-1-6">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/6')"></div>
-      </div>
-      <div class="col-1-6">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/6')"></div>
-      </div>
+      <div class="col-1-6"><div class="panel"></div></div>
+      <div class="col-1-6"><div class="panel"></div></div>
+      <div class="col-1-6"><div class="panel"></div></div>
+      <div class="col-1-6"><div class="panel"></div></div>
+      <div class="col-1-6"><div class="panel"></div></div>
+      <div class="col-1-6"><div class="panel"></div></div>
     </div>
 
     <div class="row">
-      <div class="col-1-5">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/5')"></div>
-      </div>
-      <div class="col-1-5">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/5')"></div>
-      </div>
-      <div class="col-1-5">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/5')"></div>
-      </div>
-      <div class="col-1-5">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/5')"></div>
-      </div>
-      <div class="col-1-5">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/5')"></div>
-      </div>
+      <div class="col-1-5"><div class="panel"></div></div>
+      <div class="col-1-5"><div class="panel"></div></div>
+      <div class="col-1-5"><div class="panel"></div></div>
+      <div class="col-1-5"><div class="panel"></div></div>
+      <div class="col-1-5"><div class="panel"></div></div>
     </div>
 
     <div class="row">
-      <div class="col-1-4">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/4')"></div>
-      </div>
-      <div class="col-1-4">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/4')"></div>
-      </div>
-      <div class="col-1-4">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/4')"></div>
-      </div>
-      <div class="col-1-4">
-        <div class="panel" style="background-image:url('http://placehold.it/200x200&text=1/4')"></div>
-      </div>
+      <div class="col-1-4"><div class="panel"></div></div>
+      <div class="col-1-4"><div class="panel"></div></div>
+      <div class="col-1-4"><div class="panel"></div></div>
+      <div class="col-1-4"><div class="panel"></div></div>
     </div>
   </body>
 </html>
