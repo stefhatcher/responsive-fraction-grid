@@ -9,14 +9,14 @@ $wrapper-class: "wrapper"; // full width wrapper
 $row-class: "row";         // content within a wrapper (or not). like a row
 $column-class: "col";      // column class prefix
 
-$row-width: 980px;         // max content width
+$row-width: 980px;         // max content width before dipping into responsive land
 $gutter: 20px;             // gutter between columns
 
 $num-columns: 8;           // number of max columns 
 
 // responsive breaking points
 $big-break: $row-width + $gutter; // most tablets in landscape
-$medium-break: 800px;             // most tablets in portrait
+$medium-break: 768px;             // most tablets in portrait
 $small-break: 568px;              // most mobiles in portrait, iphone3-5 in landscape
                                   // collapses to single column within small-break
 ```
