@@ -1,4 +1,4 @@
-simple-responsive-grid-scss
+responsive-fraction-grid
 ===========================
 
 Use the minified, default [stylesheets/screen.css](https://raw.github.com/stefhatcher/simple-responsive-grid-scss/master/stylesheets/screen.css) or run [SASS + COMPASS](http://thesassway.com/beginner/getting-started-with-sass-and-compass) and configure the variable options in:
