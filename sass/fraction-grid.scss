@@ -1,19 +1,18 @@
 @import "compass";
 @import "compass/css3";
 
-$wrapper-class: "wrapper"; // full width wrapper
-$row-class: "row";         // content within a wrapper (or not). like a row
-$column-class: "col";      // column class prefix
+$wrapper-class: "wrapper";
+$row-class: "row";
+$column-class: "col";
 
-$row-width: 980px;
-$gutter: 20px;
+$row-width: 980px; // width of content within a row.
+$gutter: 20px;     // set gutter to 0 if want full fractions, no gutters.
 
 $num-columns: 8;
 
 $big-break: $row-width + $gutter;
 $medium-break: 768px;
 $small-break: 568px;
-
 
 *, *:after, *:before {
   @include box-sizing(border-box);
@@ -40,8 +39,6 @@ $small-break: 568px;
 
 [class*='#{$column-class}-'] {
   @include float-left;
-  min-height: 1px;
-  position: relative;
   padding: 0 $gutter/2;
 }
 
@@ -49,7 +46,7 @@ $small-break: 568px;
   @include float-right;
 }
 
-.#{$column-class}-1-1 {
+.#{$column-class}-full, .#{$column-class}-1-1 {
   width: 100%;
 }
 
