@@ -46,6 +46,6 @@ $small-break: 568px;              // most mobiles in portrait, iphone3-5 in land
 ```
 
 ## Demo
-http://stefhatcher.com/simple-responsive-grid-scss/
+[http://stefhatcher.com/projects/responsive-fraction-grid/](http://stefhatcher.com/projects/responsive-fraction-grid/)
 
 Big shout-out to [CSS-TRICKS](http://css-tricks.com/dont-overthink-it-grids/)!
