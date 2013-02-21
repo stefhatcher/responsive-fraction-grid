@@ -9,8 +9,8 @@ $wrapper-class: "wrapper"; // full width wrapper
 $row-class: "row";         // content within a wrapper (or not). like a row
 $column-class: "col";      // column class prefix
 
-$row-width: 980px;         // max content width before dipping into responsive land
-$gutter: 20px;             // gutter between columns
+$row-width: 980px;         // max content wdith of content within a row before responsive land
+$gutter: 20px;             // gutter between columns. gutter = 0px for full fraction widths
 
 $num-columns: 8;           // number of max columns 
 
