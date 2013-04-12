@@ -1,25 +1,20 @@
 @import "compass";
 @import "compass/css3";
 
-$wrapper-class: "wrapper";
 $row-class: "row";
 $column-class: "col";
+$block-class: "block";
 
-$row-width: 980px; // width of content within a row.
+$row-width: 980px; // max-width of content within a row.
 $gutter: 20px;     // set gutter to 0 if want full fractions, no gutters.
 
 $num-columns: 8;
 
-$big-break: $row-width + $gutter;
-$medium-break: 768px;
-$small-break: 568px;
+$grid-break: $row-width + $gutter;
+$phone-break: 767px;
 
 *, *:after, *:before {
   @include box-sizing(border-box);
-}
-
-.#{$wrapper-class} {
-  width: 100%;
 }
 
 .#{$row-class} {
@@ -27,7 +22,7 @@ $small-break: 568px;
   margin: 0 auto;
   max-width: $row-width + $gutter;
   position: relative;
-  width: $row-width + $gutter;
+  width: 100%;
   @include transition(width 190ms ease-out);
 
   &:after {
@@ -42,10 +37,6 @@ $small-break: 568px;
   padding: 0 $gutter/2;
 }
 
-[class*='#{$column-class}-'] + [class*='#{$column-class}-']:last-child {
-  @include float-right;
-}
-
 .#{$column-class}-full, .#{$column-class}-1-1 {
   width: 100%;
 }
@@ -54,22 +45,25 @@ $small-break: 568px;
   @for $j from 1 through $i - 1 {
     .#{$column-class}-#{$j}-#{$i} {
       width: ($j / $i) * 100%;
+
+      @media (screen and max-width: $phone-break) {
+        .#{$block-class} & {
+          width: ($j / $i) * 100%;
+        }
+      }
     }
   }
 }
 
-@media (max-width: $big-break) {
+@media (screen and max-width: $grid-break) {
   .#{$row-class} {
     padding: 0 $gutter/2;
     width: 100%;
   }
 }
 
-// @media (max-width: $medium-break) {
-//
-// }
 
-@media (screen and max-width: $medium-break) {
+@media (screen and max-width: $phone-break) {
   [class*='#{$column-class}-'] {
     width: 100%;
   }

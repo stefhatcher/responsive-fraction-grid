@@ -5,20 +5,18 @@ Use the minified, default [stylesheets/fraction-grid.css](https://raw.github.com
 ```shell
 // sass/fraction-grid.scss
 
-$wrapper-class: "wrapper"; // full width wrapper
 $row-class: "row";         // content within a wrapper (or not). like a row
 $column-class: "col";      // column class prefix
+$block-class: "block";     // row block class used to prevent columns going full width
 
 $row-width: 980px;         // max content wdith of content within a row before responsive land
-$gutter: 20px;             // gutter between columns. gutter = 0px for full fraction widths
+$gutter: 20px;             // gutter between columns. set to 0 for full fraction widths
 
-$num-columns: 8;           // number of max columns 
+$num-columns: 8;           // number of max columns
 
 // responsive breaking points
-$big-break: $row-width + $gutter; // most tablets in landscape
-$medium-break: 768px;             // most tablets in portrait
-$small-break: 568px;              // most mobiles in portrait, iphone3-5 in landscape
-                                  // collapses to single column within small-break
+$grid-break: $row-width + $gutter; // most tablets
+$phone-break: 767px;               // collapses to single column
 ```
 
 
@@ -41,6 +39,14 @@ $small-break: 568px;              // most mobiles in portrait, iphone3-5 in land
   <div class="col-1-3"> 1/3 = 33.33333% </div>
   <div class="col-1-2"> 2/3 = 66.66667% </div>
 </div> <!-- 1/3 + 2/3 = ~100% ! -->
+
+<div class="row block">
+  <div class="col-1-2"> 1/2 = 50% </div>
+  <div class="col-1-2"> 1/2 = 50% </div>
+
+  <div class="col-1-2"> 1/2 = 50% </div>
+  <div class="col-1-2"> 1/2 = 50% </div>
+</div><!-- end row  2x2 block that will not collapse to one column -->
 
 <!-- just make sure the fractions add up per row! -->
 ```
