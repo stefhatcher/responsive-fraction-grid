@@ -8,49 +8,50 @@ $block-class: "block";
 $row-width: 980px; // max-width of content within a row.
 $gutter: 20px;     // set gutter to 0 if want full fractions, no gutters.
 
-$num-columns: 8;
+$num-columns: 12;
 
 $grid-break: $row-width + $gutter;
 $phone-break: 767px;
 
-*, *:after, *:before {
+.#{$row-class}, .#{$row-class}:after, .#{$row-class}:before,
+.#{$column-class}, .#{$column-class}:after, .#{$column-class}:before {
   @include box-sizing(border-box);
 }
 
 .#{$row-class} {
-  clear: both;
   margin: 0 auto;
   max-width: $row-width + $gutter;
   position: relative;
   width: 100%;
-  @include transition(width 190ms ease-out);
 
   &:after {
     content: '';
     clear: both;
     display: table;
   }
+
+  .#{$row-class} {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    margin: 0 (-$gutter/2);
+  }
 }
 
-[class*='#{$column-class}-'] {
+.#{$column-class} {
   @include float-left;
   padding: 0 $gutter/2;
 }
 
-.#{$column-class}-full, .#{$column-class}-1-1 {
+.#{$column-class}--whole, .#{$column-class}--1-1 {
   width: 100%;
 }
 
 @for $i from 2 through $num-columns {
   @for $j from 1 through $i - 1 {
-    .#{$column-class}-#{$j}-#{$i} {
+    .#{$column-class}--#{$j}-#{$i},
+    .#{$block-class} .#{$column-class}--#{$j}-#{$i} {
       width: ($j / $i) * 100%;
-
-      @media (screen and max-width: $phone-break) {
-        .#{$block-class} & {
-          width: ($j / $i) * 100%;
-        }
-      }
     }
   }
 }
@@ -59,12 +60,16 @@ $phone-break: 767px;
   .#{$row-class} {
     padding: 0 $gutter/2;
     width: 100%;
+
+    .#{$row-class} {
+      padding: 0;
+    }
   }
 }
 
 
 @media (screen and max-width: $phone-break) {
-  [class*='#{$column-class}-'] {
+  .#{$column-class} {
     width: 100%;
   }
 }

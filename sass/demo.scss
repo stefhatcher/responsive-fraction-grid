@@ -1,31 +1,42 @@
 @import "compass";
-@import "compass/css3";
 
-.col-1-8 .panel {
+.col--1-12 .panel {
+  background-image: url('http://placehold.it/200x200&text=1/12')
+}
+
+.col--1-8 .panel {
   background-image: url('http://placehold.it/200x200&text=1/8')
 }
 
-.col-1-7 .panel {
+.col--1-7 .panel {
   background-image: url('http://placehold.it/200x200&text=1/7')
 }
 
-.col-1-6 .panel {
+.col--1-6 .panel {
   background-image: url('http://placehold.it/200x200&text=1/6')
 }
 
-.col-1-5 .panel {
+.col--1-5 .panel {
   background-image: url('http://placehold.it/200x200&text=1/5')
 }
 
-.col-1-4 .panel {
+.col--4-5 .panel {
+  background-image: url('http://placehold.it/200x200&text=4/5')
+}
+
+.col--1-4 .panel {
   background-image: url('http://placehold.it/200x200&text=1/4')
 }
 
-.col-1-3 .panel {
+.col--1-3 .panel {
   background-image: url('http://placehold.it/200x200&text=1/3')
 }
 
-.col-1-2 .panel {
+.col--2-3 .panel {
+  background-image: url('http://placehold.it/200x200&text=2/3')
+}
+
+.col--1-2 .panel {
   background-image: url('http://placehold.it/200x200&text=1/2');
 
   .block & {
@@ -33,16 +44,13 @@
   }
 }
 
-.col-1-1 .panel {
+.row .col .row .col .panel {
+  background-image: url('http://placehold.it/200x200/dcdcdc/666666/&text=Nested');
+  background-color: #dcdcdc;
+}
+
+.col--1-1 .panel {
   background-image: url('http://placehold.it/200x200&text=1/1')
-}
-
-.col-2-3 .panel {
-  background-image: url('http://placehold.it/200x200&text=2/3')
-}
-
-.col-4-5 .panel {
-  background-image: url('http://placehold.it/200x200&text=4/5')
 }
 
 .header {
@@ -65,14 +73,27 @@
   background-color: #ccc;
   background-position: center center;
   background-repeat: no-repeat;
-  @include background-size(auto 100%);
-  @include box-shadow(inset 0px 0px 50px 0 #acacac);
+  @include background-size(contain);
   min-height: 150px;
   width: 100%;
 }
 
-[class*='col-'], hr {
+.col, hr {
   margin: 0 0 20px;
+}
+
+.row {
+  .row .col {
+    margin: 0;
+
+    @media (screen and max-width: 767px) {
+      margin: 0 0 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 html, body {

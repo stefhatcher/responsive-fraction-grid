@@ -1,0 +1,9 @@
+.col--1-12 .panel{background-image:url("http://placehold.it/200x200&text=1/12")}.col--1-8 .panel{background-image:url("http://placehold.it/200x200&text=1/8")}
+.col--1-7 .panel{background-image:url("http://placehold.it/200x200&text=1/7")}.col--1-6 .panel{background-image:url("http://placehold.it/200x200&text=1/6")}
+.col--1-5 .panel{background-image:url("http://placehold.it/200x200&text=1/5")}.col--4-5 .panel{background-image:url("http://placehold.it/200x200&text=4/5")}
+.col--1-4 .panel{background-image:url("http://placehold.it/200x200&text=1/4")}.col--1-3 .panel{background-image:url("http://placehold.it/200x200&text=1/3")}
+.col--2-3 .panel{background-image:url("http://placehold.it/200x200&text=2/3")}.col--1-2 .panel{background-image:url("http://placehold.it/200x200&text=1/2")}
+.block .col--1-2 .panel{background-image:url("http://placehold.it/200x200&text=block")}.row .col .row .col .panel{background-image:url("http://placehold.it/200x200/dcdcdc/666666/&text=Nested");background-color:#dcdcdc}
+.col--1-1 .panel{background-image:url("http://placehold.it/200x200&text=1/1")}.header{background:#dcdcdc;font-family:helvetica,sans-serif;font-size:80%;line-height:40px;height:40px;margin-bottom:20px;text-align:center;width:100%}
+.header a,.header a:visited{color:#5c5c5c;text-decoration:none}.panel{background-color:#ccc;background-position:center center;background-repeat:no-repeat;-webkit-background-size:contain;-moz-background-size:contain;-o-background-size:contain;background-size:contain;min-height:150px;width:100%}
+.col,hr{margin:0 0 20px}.row .row .col{margin:0}@media(max-width:767px){.row .row .col{margin:0 0 20px}.row .row .col:last-child{margin-bottom:0}}html,body{margin:0;padding:0}
