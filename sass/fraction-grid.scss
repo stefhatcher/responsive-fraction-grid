@@ -10,7 +10,7 @@ $gutter: 20px;     // set gutter to 0 if want full fractions, no gutters.
 
 $num-columns: 12;
 
-$grid-break: $row-width + $gutter;
+$grid-break: $row-width + ($gutter * 2);
 $phone-break: 767px;
 
 .#{$row-class}, .#{$row-class}:after, .#{$row-class}:before,

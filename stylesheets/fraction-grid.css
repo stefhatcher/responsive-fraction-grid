@@ -1,7 +1,7 @@
 .row, .row:after, .row:before,
 .col, .col:after, .col:before {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -24,7 +24,6 @@
 }
 
 .col {
-  display: inline;
   float: left;
   padding: 0 10px;
 }
@@ -363,7 +362,7 @@
   width: 91.66667%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1020px) {
   .row {
     padding: 0 10px;
     width: 100%;

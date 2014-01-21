@@ -70,9 +70,9 @@
   background-color: #ccc;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
+  -webkit-background-size: contain;
   background-size: contain;
   min-height: 150px;
   width: 100%;
