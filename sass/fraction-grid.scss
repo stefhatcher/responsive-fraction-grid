@@ -22,6 +22,16 @@ $include-push-widths: true !default;
 //   needs to be applied within the grid.
 $apply-box-sizing: false !default;
 
+////////////////////////////////////////////////////////////////////////////////
+// Algorithm to calculate the Lowest Common Denominator
+////////////////////////////////////////////////////////////////////////////////
+@function lcd($a, $b){
+  @if $b == 0 {
+    @return $a;
+  } @else {
+    @return lcd($b, $a%$b);
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Row class
@@ -125,23 +135,25 @@ $apply-box-sizing: false !default;
 
 @for $i from 1 through $num-columns {
   @for $j from 1 through $i {
-    %width-#{$j}-#{$i} {
-      width: ($j / $i) * 100%;
-    }
+    @if lcd($i,$j) == 1 {
+      %width-#{$j}-#{$i} {
+        width: ($j / $i) * 100%;
+      }
 
-    .-width-#{$j}-#{$i} {
-      @extend %width-#{$j}-#{$i};
-    }
-
-    @if ($include-block-widths) {
-      .#{$block-class} .-width-#{$j}-#{$i} {
+      .-width-#{$j}-#{$i} {
         @extend %width-#{$j}-#{$i};
       }
-    }
 
-    @if ($include-push-widths) {
-      .-push-#{$j}-#{$i} {
-        margin-left: ($j / $i) * 100%;
+      @if ($include-block-widths) {
+        .#{$block-class} .-width-#{$j}-#{$i} {
+          @extend %width-#{$j}-#{$i};
+        }
+      }
+
+      @if ($include-push-widths) {
+        .-push-#{$j}-#{$i} {
+          margin-left: ($j / $i) * 100%;
+        }
       }
     }
   }
@@ -198,8 +210,10 @@ $apply-box-sizing: false !default;
 
     @for $i from 1 through $num-columns {
       @for $j from 1 through $i - 1 {
-        .-push-#{$j}-#{$i} {
-          @extend %clear-pushes;
+        @if lcd($i,$j) == 1 {
+          .-push-#{$j}-#{$i} {
+            @extend %clear-pushes;
+          }
         }
       }
     }
