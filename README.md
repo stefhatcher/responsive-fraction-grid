@@ -31,25 +31,25 @@ $phone-break: 767px;                     // collapses to single column
 -->
 
 <div class="row">
-  <div class="col col--whole"> 1/1 = 100% </div>
+  <div class="col -width-whole"> 1/1 = 100% </div>
 </div> <!-- 100% ! -->
 
 <div class="row">
-  <div class="col col--1-2"> 1/2 = 50% </div>
-  <div class="col col--1-2"> 1/2 = 50% </div>
+  <div class="col -width-1-2"> 1/2 = 50% </div>
+  <div class="col -width-1-2"> 1/2 = 50% </div>
 </div> <!-- 1/2 + 1/2 = 100% ! -->
 
 <div class="row">
-  <div class="col col--1-3"> 1/3 = 33.33333% </div>
-  <div class="col col--1-2"> 2/3 = 66.66667% </div>
+  <div class="col -width-1-3"> 1/3 = 33.33333% </div>
+  <div class="col -width-1-2"> 2/3 = 66.66667% </div>
 </div> <!-- 1/3 + 2/3 = 100% ! -->
 
 <div class="row block">
-  <div class="col col--1-2"> 1/2 = 50% </div>
-  <div class="col col--1-2"> 1/2 = 50% </div>
+  <div class="col -width-1-2"> 1/2 = 50% </div>
+  <div class="col -width-1-2"> 1/2 = 50% </div>
 
-  <div class="col col--1-2"> 1/2 = 50% </div>
-  <div class="col col--1-2"> 1/2 = 50% </div>
+  <div class="col -width-1-2"> 1/2 = 50% </div>
+  <div class="col -width-1-2"> 1/2 = 50% </div>
 </div><!-- end row  2x2 block that will not collapse to one column -->
 
 <!-- just make sure the fractions add up per row! -->
