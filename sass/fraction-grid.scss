@@ -5,22 +5,32 @@ $row-class: "row";
 $column-class: "col";
 $block-class: "block";
 
-$row-width: 980px; // max-width of content within a row.
-$gutter: 20px;     // set gutter to 0 if want full fractions, no gutters.
+$row-width: 1024px; // max-width of content within a row.
+$gutter: 32px;      // set gutter to 0 if want full fractions, no gutters.
 
 $num-columns: 12;
 
 $grid-break: $row-width + ($gutter * 2);
 $phone-break: 767px;
 
-.#{$row-class}, .#{$row-class}:after, .#{$row-class}:before,
-.#{$column-class}, .#{$column-class}:after, .#{$column-class}:before {
-  @include box-sizing(border-box);
-}
+$include-block-widths: true !default;
+$include-push-widths: true !default;
+
+// box-sizing: border-box; is required for the grid to maintain structure.
+// Set to false if box-sizing: border-box; will be applied globally.
+// Set to true if box-sizing: border-box; will *not* be applied globally and
+//   needs to be applied within the grid.
+$apply-box-sizing: false !default;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Row class
+////////////////////////////////////////////////////////////////////////////////
 
 .#{$row-class} {
   margin: 0 auto;
   max-width: $row-width + $gutter;
+  padding: 0 ($gutter * 0.5);
   position: relative;
   width: 100%;
 
@@ -34,31 +44,116 @@ $phone-break: 767px;
     width: auto;
     max-width: none;
     min-width: 0;
-    margin: 0 (-$gutter/2);
+    margin: 0 (-$gutter * 0.5);
+    padding: 0;
+  }
+
+  //////////////////////////////////////
+  // Row modifiers
+  //////////////////////////////////////
+
+  // For full width rows, not restricted
+  &.-full {
+    max-width: 100%;
+  }
+
+  &.-gutterless-left {
+    padding-left: 0;
+  }
+
+  &.-gutterless-right {
+    padding-right: 0;
   }
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Row and Column shared modifiers
+////////////////////////////////////////////////////////////////////////////////
+
+.#{$row-class},
+.#{$column-class} {
+  @if ($apply-box-sizing) {
+    &, &:before, &:after {
+      @include box-sizing(border-box);
+    }
+  }
+
+  // helpful when using push
+  &.-absolute {
+    display: block;
+    position: absolute;
+  }
+
+  // helpful when using push
+  &.-full-height {
+    height: 100%;
+  }
+
+  &.-gutterless {
+    padding: 0;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Column class
+////////////////////////////////////////////////////////////////////////////////
+
 .#{$column-class} {
   @include float-left;
-  padding: 0 $gutter/2;
+  padding: 0 ($gutter * 0.5);
+
+  //////////////////////////////////////
+  // Column modifiers
+  //////////////////////////////////////
+
+  &.-width-whole {
+    width: 100%;
+  }
+
+  // single column with a width, centered
+  &.-centered {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-.#{$column-class}--whole, .#{$column-class}--1-1 {
-  width: 100%;
-}
+////////////////////////////////////////////////////////////////////////////////
+// Define widths and pushes
+////////////////////////////////////////////////////////////////////////////////
 
-@for $i from 2 through $num-columns {
-  @for $j from 1 through $i - 1 {
-    .#{$column-class}--#{$j}-#{$i},
-    .#{$block-class} .#{$column-class}--#{$j}-#{$i} {
+@for $i from 1 through $num-columns {
+  @for $j from 1 through $i {
+    %width-#{$j}-#{$i} {
       width: ($j / $i) * 100%;
+    }
+
+    .-width-#{$j}-#{$i} {
+      @extend %width-#{$j}-#{$i};
+    }
+
+    @if ($include-block-widths) {
+      .#{$block-class} .-width-#{$j}-#{$i} {
+        @extend %width-#{$j}-#{$i};
+      }
+    }
+
+    @if ($include-push-widths) {
+      .-push-#{$j}-#{$i} {
+        margin-left: ($j / $i) * 100%;
+      }
     }
   }
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Adjustments once smaller than the grid at max row width
+////////////////////////////////////////////////////////////////////////////////
+
 @media (screen and max-width: $grid-break) {
   .#{$row-class} {
-    padding: 0 $gutter/2;
+    padding: 0 ($gutter * 0.5);
     width: 100%;
 
     .#{$row-class} {
@@ -67,9 +162,46 @@ $phone-break: 767px;
   }
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Mobile
+////////////////////////////////////////////////////////////////////////////////
 
 @media (screen and max-width: $phone-break) {
-  .#{$column-class} {
+  // if using -width modifiers globally, without applying to a col
+  // apply this class as well to clear the width to 100% for mobile
+  .-mobile-whole {
     width: 100%;
+  }
+
+  // Row changes for mobile
+  .#{$row-class},
+  .#{$row-class}.-full {
+    padding: 0;
+  }
+
+  // Column changes for mobile
+  .#{$column-class} {
+    padding: 0 ($gutter * 0.5);
+    width: 100%;
+
+    &.-absolute {
+      display: block;
+      position: relative;
+    }
+  }
+
+  // Clear pushes if push is enabled
+  @if ($include-push-widths) {
+    %clear-pushes {
+      margin-left: 0;
+    }
+
+    @for $i from 1 through $num-columns {
+      @for $j from 1 through $i - 1 {
+        .-push-#{$j}-#{$i} {
+          @extend %clear-pushes;
+        }
+      }
+    }
   }
 }
