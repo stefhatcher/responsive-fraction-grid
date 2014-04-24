@@ -25,9 +25,9 @@ $phone-break: 767px;                     // collapses to single column
 ```shell
 <!-- defaults:
   row class is "row"
-  column width class is "col--#-#" -> col--1-2 -> 1 / 2, or 50%
-  for full columns, add "col" class too -> "col col--1-2"
-  max number of columns is 12
+  width class is "-width-#-#" -> -width-1-2 -> 1 / 2, or 50%
+  for full columns, add "col" class too -> "col -width-1-2"
+  max number of columns is 12, as defined in the SASS $num-columns variable
 -->
 
 <div class="row">
@@ -41,7 +41,7 @@ $phone-break: 767px;                     // collapses to single column
 
 <div class="row">
   <div class="col -width-1-3"> 1/3 = 33.33333% </div>
-  <div class="col -width-1-2"> 2/3 = 66.66667% </div>
+  <div class="col -width-2-3"> 2/3 = 66.66667% </div>
 </div> <!-- 1/3 + 2/3 = 100% ! -->
 
 <div class="row block">
