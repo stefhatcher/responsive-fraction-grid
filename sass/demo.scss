@@ -85,7 +85,7 @@ $gutter: 32px;
 }
 
 .col, hr {
-  margin: 0 0 ($gutter * 0.5);
+  margin: 0 0 $gutter;
 }
 
 .row {
