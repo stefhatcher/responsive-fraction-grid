@@ -202,6 +202,17 @@ $apply-box-sizing: false !default;
     }
   }
 
+  @if ($include-block-widths) {
+    .#{$block-class} {
+      padding-left: ($gutter * 0.25);
+      padding-right: ($gutter * 0.25);
+    }
+
+    .#{$block-class} .#{$column-class} {
+      padding: 0 ($gutter * 0.25);
+    }
+  }
+
   // Clear pushes if push is enabled
   @if ($include-push-widths) {
     %clear-pushes {
