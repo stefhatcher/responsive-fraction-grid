@@ -31,7 +31,11 @@ $gutter: 32px;
 }
 
 .col.-width-1-4 .panel {
-  background-image: url('http://placehold.it/200x200&text=1/4')
+  background-image: url('http://placehold.it/200x200&text=1/4');
+
+  .block & {
+    background-image: url('http://placehold.it/200x200&text=block 1/4')
+  }
 }
 
 .col.-width-1-3 .panel {
@@ -46,7 +50,7 @@ $gutter: 32px;
   background-image: url('http://placehold.it/200x200&text=1/2');
 
   .block & {
-    background-image: url('http://placehold.it/200x200&text=block')
+    background-image: url('http://placehold.it/200x200&text=block 1/2')
   }
 }
 
@@ -65,7 +69,7 @@ $gutter: 32px;
   font-size: 80%;
   line-height: $gutter;
   height: $gutter;
-  margin-bottom: ($gutter * 0.5);
+  margin-bottom: $gutter;
   text-align: center;
   width: 100%;
 }
@@ -86,6 +90,10 @@ $gutter: 32px;
 
 .col, hr {
   margin: 0 0 $gutter;
+
+  @media (screen and max-width: 767px) {
+    margin: 0 0 ($gutter * 0.5);
+  }
 }
 
 .row {
